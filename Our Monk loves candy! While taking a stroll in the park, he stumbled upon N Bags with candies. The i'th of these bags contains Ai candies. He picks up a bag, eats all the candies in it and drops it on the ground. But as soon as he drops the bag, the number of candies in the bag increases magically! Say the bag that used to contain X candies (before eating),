@@ -1,0 +1,37 @@
+link to the question : https://www.hackerearth.com/practice/data-structures/trees/heapspriority-queues/practice-problems/algorithm/monk-and-the-magical-candy-bags/?fbclid=IwAR2kDiVkEaxu9dkCTCUhzXLuIccNn0Gz3dSfkaSUjlDE6Nb9UHMzt8HNDo4
+//solution
+#include<bits/stdc++.h>
+using namespace std;
+
+ int main()
+ {
+	 int t;
+     cin>>t;
+	 while(t--)
+	 {
+   long long int n,k;
+	cin>>n>>k;
+	
+	multiset< long long int > m;
+	for(int i = 0; i<n; i++)
+ 	{
+	long long int temp;
+	 cin>>temp;
+	 m.insert(temp);
+ 	}
+	  long long int sum=0;
+	for(int i=0;i<k;i++)
+	{
+		auto last = --(m.end());
+		long long int temp2;
+		long long int temp3 = *last;
+		sum = sum + (temp3);
+	//	temp2 = (*last)/2;
+		m.erase(last);
+		m.insert((temp3)/2);
+	}
+
+        cout<<sum<<endl;
+		//sum=0;
+ }
+ }
